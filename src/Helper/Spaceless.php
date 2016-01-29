@@ -54,7 +54,7 @@ class Spaceless extends AbstractHelper
         $content           = ob_get_clean();
         $this->captureLock = false;
 
-        $content = preg_replace('/>\s+</', '><', $content);
+        $content = preg_replace('#>\s+<#', '><', $content);
 
         if ($echo) {
             echo $content;
